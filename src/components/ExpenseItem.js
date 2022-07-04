@@ -1,4 +1,5 @@
 import ExpenseDate from './ExpenseDate';
+import Card from './Card';
 import './ExpenseItem.css';
 
 function ExpenseItem(props) {
@@ -6,7 +7,10 @@ function ExpenseItem(props) {
 //Aplying a dynaminc written in JavaScript
   
   return(
-      <div className="expense-item">
+    /** This router <Card> send this "information for my Card.js file." */
+      /** This <Card classeName... received supports from constante that's content a .props attribute */
+      <Card className="expense-item">
+        {/** These <ExpenseDate> until </div> are the "information" content here will be show in my '.props' from './Card.js */} 
         <ExpenseDate date={props.date} /> 
         <div className="expense-item__description">  
         {/*<h2>{*instead of expenseTitle we put props}</h2>*/}
@@ -15,7 +19,7 @@ function ExpenseItem(props) {
        {/**The way to adapted props instead of expenseAmount.toISOString */}
        <div className="expense-item__price">${props.amount}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 

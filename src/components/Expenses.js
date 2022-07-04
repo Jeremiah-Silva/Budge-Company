@@ -1,9 +1,10 @@
 import ExpenseItem from './ExpenseItem';
-import './Expenses.css'
+import Card from './Card';
+import './Expenses.css';
 
 function Expenses(props) {
   return (
-        <div className="expenses">
+        <Card className="expenses">
             <ExpenseItem 
             /** When we chance the name of props we need to change here as well; for example Expenses.js line 19*/
             title={props.items[0].title} 
@@ -25,8 +26,8 @@ function Expenses(props) {
             amount={props.items[3].amount} 
             date={props.items[3].date}
             />
-         </div>
-  )
+         </Card>
+  );
 }
 
 export default Expenses;

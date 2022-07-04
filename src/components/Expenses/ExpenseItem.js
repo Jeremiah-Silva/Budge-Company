@@ -7,18 +7,18 @@ import './ExpenseItem.css';
 /** Alternative way to writte functions in Javascript
 
 ** ES6 **
-const App = () =>  {
-   const expenses = [ 
-     .
-     .
-   ]
-}
 */
+// How to create a listener EventName
+const ExpenseItem = (props) =>  {
+    // function clickHandler () {};
+    const clickHandler = () => {
+    console.log('Clicked!!!!');
+   };
+   
+ //function ExpenseItem(props) {
+ /** We moved these const to the file ExpenseDate.js */
+ //Aplying a dynaminc written in JavaScript
 
-function ExpenseItem(props) {
-/** We moved these const to the file ExpenseDate.js */
-//Aplying a dynaminc written in JavaScript
-  
   return(
     /** This router <Card> send this "information for my Card.js file." */
       /** This <Card classeName... received supports from constante that's content a .props attribute */
@@ -32,6 +32,9 @@ function ExpenseItem(props) {
        {/**The way to adapted props instead of expenseAmount.toISOString */}
        <div className="expense-item__price">${props.amount}</div>
       </div>
+      {/** Event listener Handling on Click */}
+      {/** <button onClick={() => {console.log('Clicked!')}}>Change title</button> */}
+      <button onClick={clickHandler}>Change title</button>
     </Card>
   );
 }

@@ -12,7 +12,7 @@ import './ExpenseItem.css';
 const ExpenseItem = (props) =>  {
     // function clickHandler () {};
     const [title, setTitle] = useState(props.title);
-
+    console.log('ExpensiveItem evaluated by React');
     //let title = props.title;
 
     const clickHandler = () => {

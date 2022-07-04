@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
@@ -11,8 +11,15 @@ import './ExpenseItem.css';
 // How to create a listener EventName
 const ExpenseItem = (props) =>  {
     // function clickHandler () {};
+    const [title, setTitle] = useState(props.title);
+
+    //let title = props.title;
+
     const clickHandler = () => {
-    console.log('Clicked!!!!');
+    // console.log('Clicked!!!!');
+    // title = 'Updated!';
+    setTitle('Updated!');
+    console.log(title);
    };
    
  //function ExpenseItem(props) {
@@ -27,7 +34,7 @@ const ExpenseItem = (props) =>  {
         <ExpenseDate date={props.date} /> 
         <div className="expense-item__description">  
         {/*<h2>{*instead of expenseTitle we put props}</h2>*/}
-        <h2>{props.title}</h2> 
+        <h2>{title}</h2> 
        {/*When we chance the .title to .name we need to chance de name of attribute in App.js line 30 */}
        {/**The way to adapted props instead of expenseAmount.toISOString */}
        <div className="expense-item__price">${props.amount}</div>

@@ -2,6 +2,16 @@ import React from 'react';
 
 import Expenses from './components/Expenses/Expenses';
 
+/** Alternative way to writte functions in Javascript
+
+** ES6 **
+const App = () =>  {
+   const expenses = [ 
+     .
+     .
+   ]
+}
+*/
 function App() {
   const expenses = [
     {

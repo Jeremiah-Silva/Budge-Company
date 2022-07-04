@@ -4,6 +4,17 @@ import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import './Expenses.css';
 
+/** Alternative way to writte functions in Javascript
+
+** ES6 **
+const App = () =>  {
+   const expenses = [ 
+     .
+     .
+   ]
+}
+*/
+
 function Expenses(props) {
   return (
         <Card className="expenses">

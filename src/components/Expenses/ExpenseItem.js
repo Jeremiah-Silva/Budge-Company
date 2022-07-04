@@ -4,6 +4,17 @@ import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 import './ExpenseItem.css';
 
+/** Alternative way to writte functions in Javascript
+
+** ES6 **
+const App = () =>  {
+   const expenses = [ 
+     .
+     .
+   ]
+}
+*/
+
 function ExpenseItem(props) {
 /** We moved these const to the file ExpenseDate.js */
 //Aplying a dynaminc written in JavaScript

@@ -2,6 +2,16 @@ import React from 'react';
 
 import './Card.css'
 
+/** Alternative way to writte functions in Javascript
+
+** ES6 **
+const App = () =>  {
+   const expenses = [ 
+     .
+     .
+   ]
+}
+*/
 
 /** This is a useful Wapper Component. */
 function Card (props) {

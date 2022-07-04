@@ -2,6 +2,17 @@ import React from 'react';
 
 import './ExpenseDate.css';
 
+/** Alternative way to writte functions in Javascript
+
+** ES6 **
+const App = () =>  {
+   const expenses = [ 
+     .
+     .
+   ]
+}
+*/
+
 function ExpenseDate(props) {
     //The way to adapted props instead of expenseDate.toISOString
     //<div> {props.date.toISOString()} </div>*/}

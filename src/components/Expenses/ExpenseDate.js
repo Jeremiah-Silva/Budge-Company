@@ -4,7 +4,7 @@ import './ExpenseDate.css';
 
 /** Alternative way to write functions in Javascript.
 
-** ES6 **
+*** ES6 ***
 const App = () =>  {
    const expenses = [ 
      .
@@ -36,3 +36,12 @@ return (
 export default ExpenseDate;
 
 /** developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString */
+
+/**
+ * *teste for comment
+ * !this is example of comment
+ * ? teste for questios 
+ * todo: teste fmfmfm
+ * @param args 
+ * @throws Exception
+ */

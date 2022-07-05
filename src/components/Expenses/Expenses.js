@@ -4,7 +4,7 @@ import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import './Expenses.css';
 
-/** Alternative way to writte functions in Javascript
+/** Alternative way to write functions in Javascript.
 
 ** ES6 **
 const App = () =>  {
@@ -19,7 +19,7 @@ function Expenses(props) {
   return (
         <Card className="expenses">
             <ExpenseItem 
-            /** When we chance the name of props we need to change here as well; for example Expenses.js line 19*/
+            /** When we chance the name of props we need to change here as well; for example Expenses.js line 19. */
             title={props.items[0].title} 
             amount={props.items[0].amount} 
             date={props.items[0].date}

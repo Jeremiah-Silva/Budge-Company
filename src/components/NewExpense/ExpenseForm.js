@@ -8,53 +8,53 @@ const ExpenseForm = () => {
   //* These three const is read separetaly. 
 
     //! a) First const: Title
-    //const [enteredTitle, setEnteredTitle] = useState(''); //*Inicial string!  
+    const [enteredTitle, setEnteredTitle] = useState(''); //*Inicial string!  
     //! b) Second const: Amount
-    //const [enteredAmount, setEnteredAmount] = useState(''); 
+    const [enteredAmount, setEnteredAmount] = useState(''); 
     //! c) Third contst: 
-    //const [enteredDate, setEntered] = useState(''); 
+    const [enteredDate, setEntered] = useState(''); 
     
   //* Create one object with these three const.
-  const [userInput, setUserInput] = useState({
-    enteredTitle: '',
-    enteredAmount: '',
-    enteredDate: '',
-  });
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredDate: '',
+  // });
 
     // a) 1. First Function:
     const titleChangeHandler = (event) => { 
       // The lines; 11 and 29 works together.
       // console.log(event.target.value); 
       //?            (Argument content to execute "setEnteredTitle");
-      //! setEnteredTitle(event.target.value);
-      setUserInput({
-        ...userInput,
-        enteredTitle: event.target.value
-      })
+      setEnteredTitle(event.target.value);
+      // setUserInput({
+      //   ...userInput,
+      //   enteredTitle: event.target.value
+      // });
+      // setUserInput((prevState) => {
+      //   return {...prevState, enteredTitle: event.target.value};
+      // }); 
     };
  
     // b) 2.Second Function:
     const amountChangeHandler = (event) => {
       // The lines; 37 and 62 works together.
       // console.log(event.target.value); 
-      //?            (Argument content to execute "setEnteredAmount");
-      //! setEnteredAmount(event.target.value);    
-      setUserInput({
-        ...userInput,
-        enteredAmount: event.target.value
-      })
+      //?            (Argument content to execute "setEnteredTitle");
+      setEnteredAmount(event.target.value);    
+      // setUserInput({
+      //   ...userInput,
+      //   enteredAmount: event.target.value,
+      // });
     };
     
     // c) 3.Third Function:
     const dateChangeHandler = (event) => {
-      // The lines; 49 and 72 works together.
-      // console.log(event.target.value); 
-      //?            (Argument content to execute "setEnteredDate");
-      //! setEnteredDate(event.target.value);
-      setUserInput({
-      ...userInput,
-      enteredDate: event.target.value
-    })
+    setEnteredDate(event.target.value);
+    //   setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value
+    // });
   };
     return ( 
     <form>

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import './Expenses.css';
+import ExpensesFilter from './ExpensesFilter';
 
 /** Alternative way to write functions in Javascript.
 
@@ -16,8 +17,17 @@ const App = () =>  {
 */
 
 function Expenses(props) {
+const [filteredYear, setFilterYear] = useState('2022');
+
+  const filterChangeHandler =  selectedYear => {
+    setFilterYear(selectedYear);
+    // console.log('Expenses.js');
+    // console.log(selectedYear);
+  };
   return (
+      <div>
         <Card className="expenses">
+        <ExpensesFilter selected={filteredYear} onChangerFilter={filterChangeHandler} /> 
             <ExpenseItem 
             /** When we chance the name of props we need to change here as well; for example Expenses.js line 19. */
             title={props.items[0].title} 
@@ -40,6 +50,7 @@ function Expenses(props) {
             date={props.items[3].date}
             />
          </Card>
+      </div>
   );
 }
 

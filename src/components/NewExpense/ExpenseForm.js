@@ -1,5 +1,5 @@
 //!Store the value and make sure it's "survives" functions can be works property! 
-import React, { useState } from "react";
+import React, { useState, setEnteredDate } from "react";
 
 import './ExpenseForm.css';
 
@@ -56,24 +56,44 @@ const ExpenseForm = () => {
     //   enteredDate: event.target.value
     // });
   };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const expenseData ={
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate)
+    };
+    
+    console.log(expenseData);
+  };
+
     return ( 
-    <form>
+    <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
             <div className="new-expense__control">
               <lable>Title</lable>
-              <input type="text" onChange={titleChangeHandler} /> {/** LISTENER {titleChangeHandler} */}
+              <input type="text" 
+                     onChange={titleChangeHandler} /> {/** LISTENER {titleChangeHandler} */}
             </div>
             <div className="new-expense__control">
               <lable>Amount</lable>
-              <input type='number' min="0.01" step="0.01" onChange={amountChangeHandler} /> {/** LISTENER {amountChangeHandler} */}
+              <input type='number' 
+                     min="0.01" 
+                     step="0.01" 
+                     onChange={amountChangeHandler} /> {/** LISTENER {amountChangeHandler} */}
             </div> 
             <div className="new-expense__control">
               <lable>Date</lable>
-              <input type='date' min="2022-01-01" max="2025" onChange={dateChangeHandler} /> {/** LISTENER {dateChangeHandler} */}
+              <input type='date'
+                     min="2022-01-01" 
+                     max="2025" 
+                     onChange={dateChangeHandler} /> {/** LISTENER {dateChangeHandler} */}
             </div>       
         </div>
         <div className="new-exepense__actions">
-            <button type="submit">Add Expense</button>    
+            <button type="submit" >Add Expense</button>    
         </div>
     </form>
   );

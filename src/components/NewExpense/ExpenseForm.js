@@ -1,9 +1,9 @@
 //!Store the value and make sure it's "survives" functions can be works property! 
-import React, { useState, setEnteredDate } from "react";
+import React, { useState } from "react";
 
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     
   //* These three const is read separetaly. 
 
@@ -12,7 +12,7 @@ const ExpenseForm = () => {
     //! b) Second const: Amount
     const [enteredAmount, setEnteredAmount] = useState(''); 
     //! c) Third contst: 
-    const [enteredDate, setEntered] = useState(''); 
+    const [enteredDate, setEnteredDate] = useState(''); 
     
   //* Create one object with these three const.
   // const [userInput, setUserInput] = useState({
@@ -66,7 +66,11 @@ const ExpenseForm = () => {
       date: new Date(enteredDate)
     };
     
-    console.log(expenseData);
+    //console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
   };
 
     return ( 
@@ -75,6 +79,7 @@ const ExpenseForm = () => {
             <div className="new-expense__control">
               <lable>Title</lable>
               <input type="text" 
+                     value={enteredTitle}
                      onChange={titleChangeHandler} /> {/** LISTENER {titleChangeHandler} */}
             </div>
             <div className="new-expense__control">
@@ -82,13 +87,15 @@ const ExpenseForm = () => {
               <input type='number' 
                      min="0.01" 
                      step="0.01" 
+                     value={enteredAmount}
                      onChange={amountChangeHandler} /> {/** LISTENER {amountChangeHandler} */}
             </div> 
             <div className="new-expense__control">
               <lable>Date</lable>
               <input type='date'
                      min="2022-01-01" 
-                     max="2025" 
+                     max="2025-12-31" 
+                     value={enteredDate}
                      onChange={dateChangeHandler} /> {/** LISTENER {dateChangeHandler} */}
             </div>       
         </div>

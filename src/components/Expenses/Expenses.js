@@ -16,18 +16,18 @@ const App = () =>  {
 }
 */
 
-function Expenses(props) {
-const [filteredYear, setFilterYear] = useState('2022');
+const Expenses = (props) => {
+const [filteredYear, setFilteredYear] = useState('2022');
 
   const filterChangeHandler =  selectedYear => {
-    setFilterYear(selectedYear);
+    setFilteredYear(selectedYear);
     // console.log('Expenses.js');
     // console.log(selectedYear);
   };
   return (
       <div>
         <Card className="expenses">
-        <ExpensesFilter selected={filteredYear} onChangerFilter={filterChangeHandler} /> 
+        <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} /> 
             <ExpenseItem 
             /** When we chance the name of props we need to change here as well; for example Expenses.js line 19. */
             title={props.items[0].title} 

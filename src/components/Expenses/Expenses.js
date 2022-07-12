@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import './Expenses.css';
 import ExpensesFilter from './ExpensesFilter';
-
+import ExpensesList from './ExpensesList';
 /** Alternative way to write functions in Javascript.
 
 ** ES6 **
@@ -24,18 +23,17 @@ const [filteredYear, setFilteredYear] = useState('2022');
     // console.log('Expenses.js');
     // console.log(selectedYear);
   };
+  const filteredExpenses = props.items.filter(expense => {
+    return expense.date.getFullYear().toString() === filteredYear; 
+  });
+  
   return (
       <div>
         <Card className="expenses">
         <ExpensesFilter selected={filteredYear} 
-                        onChangeFilter={filterChangeHandler} /> 
-        {props.items.map((expense) => (
-        <ExpenseItem 
-              title={expense.title} 
-              amount={expense.amount} 
-              date={expense.date} 
-              />
-             ))}
+                        onChangeFilter={filterChangeHandler} 
+        />
+        <ExpensesList items={filteredExpenses} />
          </Card>
       </div>
   );
@@ -43,10 +41,29 @@ const [filteredYear, setFilteredYear] = useState('2022');
 
 export default Expenses;
 
+  /**
+  return (
+      <div>
+        <Card className="expenses">
+        <ExpensesFilter selected={filteredYear} 
+                        onChangeFilter={filterChangeHandler} 
+        />
+        {filteredExpenses.length === 0 && <p>No expanses found.</p>}
+        {filteredExpenses.length > 0 && 
+          filteredExpenses.map((expense) => (
+        <ExpenseItem 
+              key={expense.id} //special prop
+              title={expense.title} 
+              amount={expense.amount} 
+              date={expense.date} 
+              />
+             ))} 
+         </Card>
+      </div>
+  );
+};
 
-
-
-  /**<ExpenseItem    
+<ExpenseItem    
             /** When we chance the name of props we need to change here as well; for example Expenses.js line 19.
             title={props.items[0].title} 
             amount={props.items[0].amount} 
@@ -66,4 +83,5 @@ export default Expenses;
             title={props.items[3].title} 
             amount={props.items[3].amount} 
             date={props.items[3].date}
-            /> */
+            /> 
+*/

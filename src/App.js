@@ -14,39 +14,39 @@ const App = () =>  {
 }
 */
 
-const DUMMY_EXPENSES = [
+const ESSENCIAL_EXPENSES = [
     {
       // Properties are the values associated with a JavaScript object.
       id: 'e1',
       title: 'Toilet Paper',
       amount: 94.12,
-      date: new Date(2020, 7, 14),
+      date: new Date(2023, 7, 14),
     },
     { 
       // Properties are the values associated with a JavaScript object.
       id: 'e2',
       title: 'New TV', 
       amount: 799.49, 
-      date: new Date(2021, 2, 12) 
+      date: new Date(2023, 2, 12) 
     },
     {
       // Properties are the values associated with a JavaScript object.
       id: 'e3',
       title: 'Car Insurance',
       amount: 294.67,
-      date: new Date(2021, 2, 28),
+      date: new Date(2024, 2, 28),
     },
     {
       // Properties are the values associated with a JavaScript object.
       id: 'e4',
       title: 'New Desk (Wooden)',
       amount: 450,
-      date: new Date(2021, 5, 12),
+      date: new Date(2025, 5, 12),
     },
   ];
 
 const App = () => {
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const [expenses, setExpenses] = useState(ESSENCIAL_EXPENSES);
 
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => { 

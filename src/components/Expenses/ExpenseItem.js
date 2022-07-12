@@ -11,16 +11,10 @@ import './ExpenseItem.css';
 // How to create a listener EventName.
 const ExpenseItem = (props) =>  {
     // function clickHandler () {};
-    const [title, setTitle] = useState(props.title);
-    console.log('ExpensiveItem evaluated by React');
+    useState(props.title);
+    // console.log('ExpensiveItem evaluated by React');
     //let title = props.title;
 
-    const clickHandler = () => {
-    // console.log('Clicked!!!!');
-    // title = 'Updated!';
-    setTitle('Updated!');
-    console.log(title);
-   };
    
  //function ExpenseItem(props) {
  /** We moved these const to the file ExpenseDate.js . */
@@ -41,7 +35,6 @@ const ExpenseItem = (props) =>  {
       </div>
       { /** Event listener Handling on Click. */ }
       { /** <button onClick={() => {console.log('Clicked!')}}>Change title</button> */ }
-      <button onClick={clickHandler}>Change title</button>
     </Card>
   );
 }

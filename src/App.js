@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
@@ -13,8 +13,8 @@ const App = () =>  {
    ]
 }
 */
-function App() {
-  const expenses = [
+
+const DUMMY_EXPENSES = [
     {
       // Properties are the values associated with a JavaScript object.
       id: 'e1',
@@ -45,9 +45,16 @@ function App() {
     },
   ];
 
-const addExpenseHandler = expense => {
-  console.log('In App.js');
-  console.log(expense);
+const App = () => {
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => { 
+        return [expense, ...prevExpenses];
+    });
+  
+  //console.log('In App.js');
+  //console.log(expense);
 };
 
   return (

@@ -4,6 +4,7 @@ import Card from '../UI/Card';
 import './Expenses.css';
 import ExpensesFilter from './ExpensesFilter';
 import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 /** Alternative way to write functions in Javascript.
 
 ** ES6 **
@@ -33,6 +34,7 @@ const [filteredYear, setFilteredYear] = useState('2022');
         <ExpensesFilter selected={filteredYear} 
                         onChangeFilter={filterChangeHandler} 
         />
+        <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList items={filteredExpenses} />
          </Card>
       </div>

@@ -13,3 +13,8 @@ Another useful feature of the application is the notification functionality. The
 Furthermore, the application is highly customizable. The user can choose from different color and font themes, making the user experience even more enjoyable.
 
 In summary, Budge Company is a highly useful web application for those who wish to manage their budgets more effectively. With an intuitive interface and customizable features, this application makes it easier than ever to control finances. To try the application, simply access the link https://budget-company.vercel.app/.
+
+# 
+![Budget Company 1](https://user-images.githubusercontent.com/108309798/232360185-ed5a03b1-ed9a-4eb5-bfde-893f40692921.png)
+#
+![Budget Company 2](https://user-images.githubusercontent.com/108309798/232360197-99d43a82-de90-40d2-95e8-3eac5d92b221.png)
